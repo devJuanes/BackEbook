@@ -15,7 +15,8 @@ def main():
     import datetime
     from config.settings import FIREBASE_CREDENTIALS_PATH, FIREBASE_DATABASE_URL
 
-    print("Hora del servidor (debe ser correcta para JWT):", datetime.datetime.utcnow().isoformat() + "Z")
+    _utc = getattr(datetime, "UTC", datetime.timezone.utc)
+print("Hora del servidor (debe ser correcta para JWT):", datetime.datetime.now(_utc).isoformat().replace("+00:00", "Z"))
     print("Ruta de credenciales:", FIREBASE_CREDENTIALS_PATH)
     print("Existe archivo:", os.path.isfile(FIREBASE_CREDENTIALS_PATH))
     print("Database URL:", FIREBASE_DATABASE_URL or "(no definida)")

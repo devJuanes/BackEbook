@@ -4,6 +4,7 @@ Conecta al mismo Firebase que usa ebook-app: Realtime Database en APP/eBooks.
 Lee libros existentes como referencia y escribe los nuevos para que la app los muestre.
 """
 import logging
+import threading
 from typing import Any
 
 from config.settings import (
@@ -14,41 +15,51 @@ from config.settings import (
 
 logger = logging.getLogger(__name__)
 
-# Inicialización diferida de Firebase
+# Inicialización diferida de Firebase (thread-safe: varios workers pueden llamar a la vez)
 _firebase_app = None
 _db = None
+_lock = threading.Lock()
 
 
 def _init_firebase() -> None:
-    """Inicializa Firebase Admin con las credenciales del proyecto ebook-app."""
+    """Inicializa Firebase Admin con las credenciales del proyecto ebook-app (solo una vez)."""
     global _firebase_app, _db
-    if _firebase_app is not None:
-        return
+    with _lock:
+        if _firebase_app is not None:
+            return
+        try:
+            import firebase_admin
+            from firebase_admin import credentials, db as firebase_db
+        except ImportError:
+            raise ImportError(
+                "Instala firebase-admin: pip install firebase-admin"
+            ) from None
 
-    try:
-        import firebase_admin
-        from firebase_admin import credentials, db as firebase_db
-    except ImportError:
-        raise ImportError(
-            "Instala firebase-admin: pip install firebase-admin"
-        ) from None
+        # Si ya existe la app por defecto (p. ej. otro hilo la creó), reutilizarla
+        try:
+            _firebase_app = firebase_admin.get_app()
+            _db = firebase_db.reference()
+            logger.debug("Firebase: reutilizando app existente")
+            return
+        except ValueError:
+            pass
 
-    if not FIREBASE_DATABASE_URL:
-        raise ValueError(
-            "FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). "
-            "Usa la misma URL de Realtime Database que ebook-app."
-        )
+        if not FIREBASE_DATABASE_URL:
+            raise ValueError(
+                "FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). "
+                "Usa la misma URL de Realtime Database que ebook-app."
+            )
 
-    if not FIREBASE_CREDENTIALS_PATH or not __import__("os").path.isfile(FIREBASE_CREDENTIALS_PATH):
-        raise FileNotFoundError(
-            f"Credenciales de Firebase no encontradas en {FIREBASE_CREDENTIALS_PATH}. "
-            "Descarga la clave de cuenta de servicio desde Firebase Console (mismo proyecto que ebook-app)."
-        )
+        if not FIREBASE_CREDENTIALS_PATH or not __import__("os").path.isfile(FIREBASE_CREDENTIALS_PATH):
+            raise FileNotFoundError(
+                f"Credenciales de Firebase no encontradas en {FIREBASE_CREDENTIALS_PATH}. "
+                "Descarga la clave de cuenta de servicio desde Firebase Console (mismo proyecto que ebook-app)."
+            )
 
-    cred = credentials.Certificate(FIREBASE_CREDENTIALS_PATH)
-    _firebase_app = firebase_admin.initialize_app(cred, {"databaseURL": FIREBASE_DATABASE_URL})
-    _db = firebase_db.reference()
-    logger.info("Firebase inicializado (Realtime Database, mismo proyecto que ebook-app)")
+        cred = credentials.Certificate(FIREBASE_CREDENTIALS_PATH)
+        _firebase_app = firebase_admin.initialize_app(cred, {"databaseURL": FIREBASE_DATABASE_URL})
+        _db = firebase_db.reference()
+        logger.info("Firebase inicializado (Realtime Database, mismo proyecto que ebook-app)")
 
 
 def get_db():
