@@ -58,4 +58,36 @@ sudo nginx -t && sudo systemctl reload nginx
 
 ---
 
-**Comandos útiles:** `pm2 logs backebook` | `pm2 restart backebook` | `pm2 stop backebook`
+**Comandos útiles (usa `pm2`, no `npm`):**
+- `pm2 restart backebook` — reiniciar
+- `pm2 logs backebook` — ver logs
+- `pm2 stop backebook` — parar
+
+---
+
+### Si sale "Invalid JWT Signature" (Firebase)
+
+1. **Comprobar credenciales en el servidor:**
+   ```bash
+   cd /root/apps/BackEbook/book_factory_ai
+   ./venv/bin/python scripts/verify_firebase.py
+   ```
+   El script indica si el JSON es válido, si falta algún campo y si la conexión a Firebase funciona.
+
+2. **Revisar la hora del servidor** (si está mal, el JWT falla):
+   ```bash
+   date -u
+   ```
+   Si no es correcta: `sudo timedatectl set-ntp true` o ajustar zona/reloj.
+
+3. **Asegurar que usas la clave correcta:**
+   - En [Firebase Console](https://console.firebase.google.com) → mismo proyecto que ebook-app → Project settings → Service accounts → **Generate new private key** (usa una clave nueva).
+   - Sube el JSON al servidor **sin abrirlo en editores que cambien comillas o codificación** (mejor `scp` o subir el archivo tal cual).
+   - Reemplaza `config/serviceAccountKey.json` por ese archivo.
+
+4. **Ruta absoluta en `.env`** (por si el proceso lee otro archivo):
+   ```bash
+   echo 'FIREBASE_CREDENTIALS_PATH=/root/apps/BackEbook/book_factory_ai/config/serviceAccountKey.json' >> .env
+   ```
+
+5. `pm2 restart backebook`

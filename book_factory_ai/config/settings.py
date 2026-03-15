@@ -19,10 +19,14 @@ LOGS_DIR.mkdir(exist_ok=True)
 
 # Firebase (mismo proyecto que ebook-app)
 # Crear clave de cuenta de servicio en Firebase Console y poner ruta aquí o en env
+_def_creds = (BASE_DIR / "config" / "serviceAccountKey.json").resolve()
 FIREBASE_CREDENTIALS_PATH = os.getenv(
     "FIREBASE_CREDENTIALS_PATH",
-    os.path.join(BASE_DIR, "config", "serviceAccountKey.json"),
+    str(_def_creds),
 )
+# Siempre resolver a ruta absoluta para evitar cargar otro archivo por cwd
+if not os.path.isabs(FIREBASE_CREDENTIALS_PATH):
+    FIREBASE_CREDENTIALS_PATH = str((BASE_DIR / FIREBASE_CREDENTIALS_PATH).resolve())
 # URL de Realtime Database (la misma que usa ebook-app)
 def _default_database_url() -> str:
     url = os.getenv("FIREBASE_DATABASE_URL", "").strip()
