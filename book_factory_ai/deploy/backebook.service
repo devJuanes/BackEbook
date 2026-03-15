@@ -1,0 +1,33 @@
+# Servicio systemd para BackEbook (Ubuntu)
+# Instalar: sudo cp deploy/backebook.service /etc/systemd/system/ && sudo systemctl daemon-reload
+
+[Unit]
+Description=BackEbook - Fábrica de generación de libros (Firebase + ebook-app)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+
+# Ruta donde está el proyecto (ajustar si usas otra)
+WorkingDirectory=/opt/backebook
+Environment=PATH=/opt/backebook/venv/bin:/usr/local/bin:/usr/bin:/bin
+
+# Cargar variables desde .env del proyecto
+EnvironmentFile=-/opt/backebook/.env
+
+# Ejecutar servidor (puerto 9753 + worker en segundo plano)
+ExecStart=/opt/backebook/venv/bin/python server.py
+
+Restart=always
+RestartSec=10
+
+# Logs de systemd
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=backebook
+
+[Install]
+WantedBy=multi-user.target

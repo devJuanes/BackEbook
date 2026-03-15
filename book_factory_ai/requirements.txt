@@ -1,0 +1,13 @@
+# BackEbook - mismo Firebase que ebook-app
+firebase-admin>=6.2.0
+
+# Modelo de lenguaje (HuggingFace)
+torch>=2.0.0
+transformers>=4.35.0
+accelerate>=0.24.0
+
+# Opcional: variables de entorno
+python-dotenv>=1.0.0
+
+# Servidor de estado (despliegue)
+flask>=3.0.0

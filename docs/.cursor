@@ -1,0 +1,231 @@
+Actúa como un ingeniero senior en Inteligencia Artificial y arquitecto backend en Python.
+
+Crea un proyecto completo en Python para un sistema de IA llamado **BookFactory AI**.
+
+El objetivo de este sistema es generar y editar libros automáticamente de forma continua usando libros existentes almacenados en Firebase como referencia.
+
+El sistema debe funcionar como una **fábrica de generación de libros que trabaja 24/7**.
+
+---
+
+ARQUITECTURA GENERAL
+
+El proyecto debe incluir los siguientes módulos:
+
+1. Conector con Firebase
+2. Analizador de libros
+3. Generador de libros
+4. Editor de libros
+5. Sistema de robots trabajadores (workers)
+6. Sistema de logs
+7. Pipeline de generación de libros
+8. Programador de tareas para generación continua
+
+---
+
+ESTRUCTURA DEL PROYECTO
+
+Crea la siguiente estructura de carpetas:
+
+/book_factory_ai
+ /core
+  firebase_client.py
+  book_analyzer.py
+  book_generator.py
+  book_editor.py
+  pipeline.py
+
+ /workers
+  worker_manager.py
+  worker_generate.py
+  worker_edit.py
+
+ /models
+  llm_loader.py
+
+ /logs
+
+ /config
+  settings.py
+
+ main.py
+ requirements.txt
+ README.md
+
+---
+
+INTEGRACIÓN CON FIREBASE
+
+El sistema debe conectarse a Firebase Firestore y leer los libros desde una colección llamada:
+
+books
+
+Cada documento del libro debe tener los siguientes campos:
+
+title
+chapters
+content
+created_at
+
+Utiliza el SDK oficial **firebase-admin**.
+
+---
+
+MODELO DE IA
+
+Utiliza un modelo open source ligero compatible con HuggingFace Transformers.
+
+Modelo recomendado:
+
+mistralai/Mistral-7B-Instruct
+
+Crea un módulo que cargue el modelo una sola vez y lo reutilice para todas las tareas.
+
+---
+
+ANALIZADOR DE LIBROS
+
+Este módulo debe:
+
+* leer los libros existentes desde Firebase
+* analizar el estilo de escritura
+* detectar la estructura de los libros
+* extraer los temas principales
+* generar un resumen del estilo de escritura
+
+Ejemplo de función:
+
+analyze_books(books)
+
+Debe devolver un resumen estructurado del estilo del contenido.
+
+---
+
+GENERADOR DE LIBROS
+
+Este módulo debe generar nuevos libros.
+
+Pasos:
+
+1. Crear un índice o esquema del libro
+2. Generar capítulos
+3. Expandir los capítulos
+4. Asegurar coherencia narrativa
+
+Los libros deben tener aproximadamente:
+
+80,000 palabras
+
+Estructura recomendada:
+
+20 capítulos
+4000 palabras por capítulo
+
+El generador debe usar el estilo aprendido por el analizador.
+
+---
+
+EDITOR DE LIBROS
+
+Después de generar el contenido, ejecutar un proceso de edición que:
+
+* corrija gramática
+* mejore coherencia
+* elimine repeticiones
+* mejore claridad del texto
+
+---
+
+PIPELINE
+
+El pipeline debe ejecutar el siguiente flujo:
+
+1 leer libros desde Firebase
+2 analizar estilo
+3 generar índice del libro
+4 generar capítulos
+5 editar capítulos
+6 ensamblar el libro completo
+7 guardar el nuevo libro en Firebase
+
+---
+
+SISTEMA DE WORKERS
+
+Crear un sistema de robots trabajadores que simule múltiples IAs escribiendo libros al mismo tiempo.
+
+Configuración ejemplo:
+
+workers_generate = 15
+workers_edit = 10
+
+Usar multiprocessing o concurrent futures de Python.
+
+Cada worker debe:
+
+* generar libros
+* enviarlos a Firebase
+* registrar logs del proceso
+
+---
+
+SCHEDULER
+
+El sistema debe ejecutarse continuamente.
+
+Utilizar un bucle infinito o un programador de tareas.
+
+Ejemplo:
+
+generar libros cada pocos minutos.
+
+---
+
+SISTEMA DE LOGS
+
+Cada acción debe registrarse en logs.
+
+Archivo:
+
+logs/book_generation.log
+
+Registrar:
+
+libros creados
+capítulos generados
+resultados de edición
+errores del sistema
+
+---
+
+PROGRAMA PRINCIPAL
+
+El archivo main.py debe iniciar el sistema y lanzar el administrador de workers.
+
+---
+
+RENDIMIENTO
+
+Diseñar el sistema para poder escalar hasta:
+
+30 workers de IA generando libros simultáneamente.
+
+---
+
+CALIDAD DEL CÓDIGO
+
+Requisitos:
+
+arquitectura limpia
+diseño modular
+docstrings en funciones
+type hints
+comentarios claros
+manejo de errores
+
+---
+
+SALIDA
+
+Genera todo el proyecto completo con todos los archivos y explica brevemente cada módulo.
+para hacerlo aqui 

@@ -1,0 +1,285 @@
+2026-03-15 15:37:19 | INFO | __main__ | Modo una sola ejecución.
+2026-03-15 15:37:22 | ERROR | core.pipeline | Error leyendo libros desde Firebase: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\pipeline.py", line 40, in run_pipeline
+    raw = read_books()
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 66, in read_books
+    ref = get_db().child(FIREBASE_BOOKS_PATH)
+          ~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 56, in get_db
+    _init_firebase()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 37, in _init_firebase
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+2026-03-15 15:37:22 | INFO | workers.worker_manager | Iniciando pool: generate=15, edit=10, intervalo=300s, max_concurrent=30
+2026-03-15 15:37:23 | ERROR | core.pipeline | Error leyendo libros desde Firebase: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\pipeline.py", line 40, in run_pipeline
+    raw = read_books()
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 66, in read_books
+    ref = get_db().child(FIREBASE_BOOKS_PATH)
+          ~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 56, in get_db
+    _init_firebase()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 37, in _init_firebase
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+2026-03-15 15:37:23 | ERROR | core.pipeline | Error leyendo libros desde Firebase: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\pipeline.py", line 40, in run_pipeline
+    raw = read_books()
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 66, in read_books
+    ref = get_db().child(FIREBASE_BOOKS_PATH)
+          ~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 56, in get_db
+    _init_firebase()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 37, in _init_firebase
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+2026-03-15 15:37:23 | ERROR | core.pipeline | Error leyendo libros desde Firebase: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\pipeline.py", line 40, in run_pipeline
+    raw = read_books()
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 66, in read_books
+    ref = get_db().child(FIREBASE_BOOKS_PATH)
+          ~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 56, in get_db
+    _init_firebase()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 37, in _init_firebase
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+2026-03-15 15:37:23 | ERROR | core.pipeline | Error leyendo libros desde Firebase: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\pipeline.py", line 40, in run_pipeline
+    raw = read_books()
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 66, in read_books
+    ref = get_db().child(FIREBASE_BOOKS_PATH)
+          ~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 56, in get_db
+    _init_firebase()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 37, in _init_firebase
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+2026-03-15 15:37:23 | ERROR | core.pipeline | Error leyendo libros desde Firebase: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\pipeline.py", line 40, in run_pipeline
+    raw = read_books()
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 66, in read_books
+    ref = get_db().child(FIREBASE_BOOKS_PATH)
+          ~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 56, in get_db
+    _init_firebase()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 37, in _init_firebase
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+2026-03-15 15:37:23 | ERROR | core.pipeline | Error leyendo libros desde Firebase: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\pipeline.py", line 40, in run_pipeline
+    raw = read_books()
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 66, in read_books
+    ref = get_db().child(FIREBASE_BOOKS_PATH)
+          ~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 56, in get_db
+    _init_firebase()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 37, in _init_firebase
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+2026-03-15 15:37:23 | ERROR | core.pipeline | Error leyendo libros desde Firebase: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\pipeline.py", line 40, in run_pipeline
+    raw = read_books()
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 66, in read_books
+    ref = get_db().child(FIREBASE_BOOKS_PATH)
+          ~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 56, in get_db
+    _init_firebase()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 37, in _init_firebase
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+2026-03-15 15:37:23 | ERROR | core.pipeline | Error leyendo libros desde Firebase: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\pipeline.py", line 40, in run_pipeline
+    raw = read_books()
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 66, in read_books
+    ref = get_db().child(FIREBASE_BOOKS_PATH)
+          ~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 56, in get_db
+    _init_firebase()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 37, in _init_firebase
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+2026-03-15 15:37:23 | ERROR | core.pipeline | Error leyendo libros desde Firebase: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\pipeline.py", line 40, in run_pipeline
+    raw = read_books()
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 66, in read_books
+    ref = get_db().child(FIREBASE_BOOKS_PATH)
+          ~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 56, in get_db
+    _init_firebase()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 37, in _init_firebase
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+2026-03-15 15:37:23 | ERROR | core.pipeline | Error leyendo libros desde Firebase: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\pipeline.py", line 40, in run_pipeline
+    raw = read_books()
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 66, in read_books
+    ref = get_db().child(FIREBASE_BOOKS_PATH)
+          ~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 56, in get_db
+    _init_firebase()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 37, in _init_firebase
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+2026-03-15 15:37:23 | ERROR | core.pipeline | Error leyendo libros desde Firebase: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\pipeline.py", line 40, in run_pipeline
+    raw = read_books()
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 66, in read_books
+    ref = get_db().child(FIREBASE_BOOKS_PATH)
+          ~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 56, in get_db
+    _init_firebase()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 37, in _init_firebase
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+2026-03-15 15:37:23 | ERROR | core.pipeline | Error leyendo libros desde Firebase: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\pipeline.py", line 40, in run_pipeline
+    raw = read_books()
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 66, in read_books
+    ref = get_db().child(FIREBASE_BOOKS_PATH)
+          ~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 56, in get_db
+    _init_firebase()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 37, in _init_firebase
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+2026-03-15 15:37:23 | ERROR | core.pipeline | Error leyendo libros desde Firebase: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\pipeline.py", line 40, in run_pipeline
+    raw = read_books()
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 66, in read_books
+    ref = get_db().child(FIREBASE_BOOKS_PATH)
+          ~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 56, in get_db
+    _init_firebase()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 37, in _init_firebase
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+2026-03-15 15:37:23 | ERROR | core.pipeline | Error leyendo libros desde Firebase: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\pipeline.py", line 40, in run_pipeline
+    raw = read_books()
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 66, in read_books
+    ref = get_db().child(FIREBASE_BOOKS_PATH)
+          ~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 56, in get_db
+    _init_firebase()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 37, in _init_firebase
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+2026-03-15 15:37:23 | ERROR | core.pipeline | Error leyendo libros desde Firebase: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\pipeline.py", line 40, in run_pipeline
+    raw = read_books()
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 66, in read_books
+    ref = get_db().child(FIREBASE_BOOKS_PATH)
+          ~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 56, in get_db
+    _init_firebase()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\firebase_client.py", line 37, in _init_firebase
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: FIREBASE_DATABASE_URL debe estar definido (ej. en .env o config). Usa la misma URL de Realtime Database que ebook-app.
+2026-03-15 15:37:24 | INFO | workers.worker_manager | Esperando 300 segundos hasta la siguiente ronda...
+2026-03-15 15:39:25 | INFO | __main__ | Modo una sola ejecución.
+2026-03-15 15:39:26 | INFO | core.firebase_client | Firebase inicializado (Realtime Database, mismo proyecto que ebook-app)
+2026-03-15 15:39:28 | ERROR | core.pipeline | Error leyendo libros desde Firebase: 'list' object has no attribute 'items'
+Traceback (most recent call last):
+  File "C:\Users\Usuario\Desktop\BackEbook\book_factory_ai\core\pipeline.py", line 42, in run_pipeline
+    {**v, "id": int(k)} for k, v in raw.items()
+                                    ^^^^^^^^^
+AttributeError: 'list' object has no attribute 'items'
+2026-03-15 15:41:07 | INFO | __main__ | Modo una sola ejecución.
+2026-03-15 15:41:08 | INFO | core.firebase_client | Firebase inicializado (Realtime Database, mismo proyecto que ebook-app)
+2026-03-15 15:41:26 | INFO | models.llm_loader | Cargando modelo mistralai/Mistral-7B-Instruct-v0.2 (device=auto)...
+2026-03-15 15:41:27 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-15 15:41:27 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-7B-Instruct-v0.2/63a8b081895390a26e140280378bc85ec8bce07a/config.json "HTTP/1.1 200 OK"
+2026-03-15 15:41:27 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-7B-Instruct-v0.2/63a8b081895390a26e140280378bc85ec8bce07a/config.json "HTTP/1.1 200 OK"
+2026-03-15 15:41:27 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-15 15:41:27 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-03-15 15:41:27 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-7B-Instruct-v0.2/63a8b081895390a26e140280378bc85ec8bce07a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-15 15:41:27 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-7B-Instruct-v0.2/63a8b081895390a26e140280378bc85ec8bce07a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-15 15:41:27 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-15 15:41:28 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-7B-Instruct-v0.2/63a8b081895390a26e140280378bc85ec8bce07a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-15 15:41:28 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/mistralai/Mistral-7B-Instruct-v0.2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-15 15:41:28 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/mistralai/Mistral-7B-Instruct-v0.2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-15 15:41:28 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/main/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-15 15:41:28 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-7B-Instruct-v0.2/63a8b081895390a26e140280378bc85ec8bce07a/tokenizer.json "HTTP/1.1 200 OK"
+2026-03-15 15:41:28 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-7B-Instruct-v0.2/63a8b081895390a26e140280378bc85ec8bce07a/tokenizer.json "HTTP/1.1 200 OK"
+2026-03-15 15:41:28 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/main/tokenizer.model "HTTP/1.1 302 Found"
+2026-03-15 15:41:29 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/mistralai/Mistral-7B-Instruct-v0.2/xet-read-token/63a8b081895390a26e140280378bc85ec8bce07a "HTTP/1.1 200 OK"
+2026-03-15 15:41:32 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-03-15 15:41:32 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-15 15:41:32 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-7B-Instruct-v0.2/63a8b081895390a26e140280378bc85ec8bce07a/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-03-15 15:41:32 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-7B-Instruct-v0.2/63a8b081895390a26e140280378bc85ec8bce07a/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-03-15 15:41:32 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-03-15 15:41:33 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-15 15:41:33 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-7B-Instruct-v0.2/63a8b081895390a26e140280378bc85ec8bce07a/config.json "HTTP/1.1 200 OK"
+2026-03-15 15:41:33 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-03-15 15:41:33 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-15 15:41:33 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-7B-Instruct-v0.2/63a8b081895390a26e140280378bc85ec8bce07a/model.safetensors.index.json "HTTP/1.1 200 OK"
+2026-03-15 15:41:33 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-7B-Instruct-v0.2/63a8b081895390a26e140280378bc85ec8bce07a/model.safetensors.index.json "HTTP/1.1 200 OK"
+2026-03-15 15:41:33 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/mistralai/Mistral-7B-Instruct-v0.2/revision/main "HTTP/1.1 200 OK"
+2026-03-15 15:41:33 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/63a8b081895390a26e140280378bc85ec8bce07a/model-00001-of-00003.safetensors "HTTP/1.1 302 Found"
+2026-03-15 15:41:33 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/63a8b081895390a26e140280378bc85ec8bce07a/model-00002-of-00003.safetensors "HTTP/1.1 302 Found"
+2026-03-15 15:41:34 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/63a8b081895390a26e140280378bc85ec8bce07a/model-00003-of-00003.safetensors "HTTP/1.1 302 Found"
