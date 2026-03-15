@@ -18,7 +18,6 @@ module.exports = {
       autorestart: true,
       watch: false,
       max_memory_restart: "2G",
-      env_file: path.join(appDir, ".env"),
       env: {},
       error_file: path.join(appDir, "logs", "pm2-error.log"),
       out_file: path.join(appDir, "logs", "pm2-out.log"),

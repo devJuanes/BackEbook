@@ -30,9 +30,9 @@ book_factory_ai/
   main.py              # Worker solo (main.py --once o bucle)
   server.py            # Worker + HTTP en puerto 9753 (despliegue)
   requirements.txt
+  ecosystem.config.cjs         # PM2 (servidor)
   deploy/
-    backebook.service           # systemd (Ubuntu)
-    setup-ubuntu.sh             # Instalación en servidor
+    setup-ubuntu.sh             # Instalación en servidor (PM2)
     nginx-subdomain.conf.example  # Nginx para subdominio
 ```
 
@@ -66,67 +66,71 @@ python main.py
 python main.py --interval 600
 ```
 
-## Despliegue en Ubuntu (servidor + subdominio)
+## Despliegue en el servidor (Ubuntu + PM2)
 
-BackEbook puede correr en un servidor Ubuntu con un **puerto dedicado** (por defecto **9753**) y un **subdominio** opcional (ej. `backebook.tudominio.com`).
+Todo listo para **clonar en el servidor y ponerlo a correr con PM2** (puerto **9753**; opcional: subdominio con nginx).
 
-### 1. Servidor con puerto y worker en segundo plano
+### Pasos en el servidor
 
-- **`server.py`**: inicia el worker de generación en segundo plano y un servidor HTTP en el puerto **9753** (configurable con `BACKEBOOK_PORT`).
-- Rutas:
-  - `GET /` → estado del servicio (JSON).
-  - `GET /health` → 200 OK (para balanceadores o health checks).
-  - `GET /logs` → últimas líneas del log.
+**1. Clonar el repo** (o subir el proyecto) en la ruta que quieras, por ejemplo:
 
 ```bash
-# Probar en local
-python server.py
-# Abre http://localhost:9753
+cd /var/www   # o /opt, /home/tu_usuario, etc.
+git clone <URL_DEL_REPO> backebook
+cd backebook
+# Si el repo es solo book_factory_ai, entra: cd book_factory_ai
 ```
 
-### 2. Variables de entorno en servidor
-
-En `.env` del proyecto (o en el systemd `EnvironmentFile`):
-
-- `FIREBASE_DATABASE_URL` y `FIREBASE_CREDENTIALS_PATH` (o `serviceAccountKey.json` en `config/`).
-- Opcional: `BACKEBOOK_HOST=0.0.0.0`, `BACKEBOOK_PORT=9753`.
-
-### 3. Instalación en Ubuntu (systemd)
-
-En el servidor, clona o copia el proyecto y ejecuta:
+**2. Configurar `.env`**
 
 ```bash
-cd /opt/backebook   # o la ruta donde esté el proyecto
-sudo bash deploy/setup-ubuntu.sh
+cp config/settings.example.env .env
+nano .env   # o vim
 ```
 
-El script:
+Mínimo necesario:
 
-- Instala dependencias (python3, venv, pip).
-- Crea el venv e instala `requirements.txt`.
-- Instala y habilita el servicio **backebook** (systemd).
-- El servicio ejecuta `server.py` (puerto 9753 + worker).
+- `FIREBASE_DATABASE_URL=https://tu-proyecto-default-rtdb.firebaseio.com`
+- Tener el archivo `config/serviceAccountKey.json` (clave de cuenta de servicio de Firebase del mismo proyecto que ebook-app).
 
-Comandos útiles:
+**3. Instalar y arrancar con PM2**
 
 ```bash
-sudo systemctl status backebook
-sudo systemctl restart backebook
-journalctl -u backebook -f
+bash deploy/setup-ubuntu.sh
 ```
 
-### 4. Subdominio con nginx
+El script: comprueba Python y PM2, crea el venv, instala dependencias, arranca la app con PM2 y te indica si debes ejecutar `pm2 startup` para que arranque al reiniciar el servidor.
 
-- Copia `deploy/nginx-subdomain.conf.example` a `/etc/nginx/sites-available/backebook`.
-- Edita `server_name` (ej. `backebook.tudominio.com`) y el upstream si cambiaste el puerto.
-- Habilita el sitio y recarga nginx:
+**4. (Opcional) Subdominio con nginx**
+
+Si quieres algo tipo `backebook.tudominio.com`:
 
 ```bash
+sudo cp deploy/nginx-subdomain.conf.example /etc/nginx/sites-available/backebook
+sudo nano /etc/nginx/sites-available/backebook   # cambia server_name
 sudo ln -s /etc/nginx/sites-available/backebook /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl reload nginx
 ```
 
-Opcional: HTTPS con Let's Encrypt (`certbot --nginx -d backebook.tudominio.com`); en el ejemplo hay comentarios para el `server` 443.
+HTTPS: `sudo certbot --nginx -d backebook.tudominio.com`
+
+---
+
+**Comandos PM2 útiles**
+
+| Comando | Descripción |
+|--------|-------------|
+| `pm2 status` | Estado del proceso |
+| `pm2 logs backebook` | Ver logs en tiempo real |
+| `pm2 restart backebook` | Reiniciar |
+| `pm2 stop backebook` | Parar |
+| `pm2 save` | Guardar lista (persiste tras reinicio) |
+
+**Servidor HTTP (puerto 9753)**
+
+- `GET /` → estado (JSON)
+- `GET /health` → 200 OK (health check)
+- `GET /logs` → últimas líneas del log
 
 ## Logs
 
