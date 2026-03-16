@@ -1,6 +1,6 @@
 Actúa como un ingeniero senior en Inteligencia Artificial y arquitecto backend en Python.
 
-Crea un proyecto completo en Python para un sistema de IA llamado **BookFactory AI**.
+Este proyecto completo en Python para un sistema de IA llamado **BackEbook** pero que se va a usar para **ebook-app**.
 
 El objetivo de este sistema es generar y editar libros automáticamente de forma continua usando libros existentes almacenados en Firebase como referencia.
 
@@ -9,7 +9,7 @@ El sistema debe funcionar como una **fábrica de generación de libros que traba
 ---
 
 ARQUITECTURA GENERAL
-
+ 
 El proyecto debe incluir los siguientes módulos:
 
 1. Conector con Firebase
